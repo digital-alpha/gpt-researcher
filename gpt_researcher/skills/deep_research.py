@@ -346,6 +346,7 @@ Format each question on a new line starting with 'Question: '"""}
         initial_costs = self.researcher.get_costs()
 
         follow_up_questions = await self.generate_research_plan(self.researcher.query)
+        # TODO need this from user
         answers = ["Automatically proceeding with research"] * len(follow_up_questions)
 
         qa_pairs = [f"Q: {q}\nA: {a}" for q, a in zip(follow_up_questions, answers)]
