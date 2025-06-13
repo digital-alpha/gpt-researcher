@@ -1,0 +1,43 @@
+=== MISCLASSIFICATION ANALYSIS ===
+
+Query: What's the size and growth potential of the electric vehicle market?
+Expected: MarketResearch | Predicted: OpportunityMapping
+--------------------------------------------------
+Query: Can you analyze how people shop online for clothes?
+Expected: MarketResearch | Predicted: TrendForecast
+--------------------------------------------------
+Query: What's the demand outlook for solar energy in the next decade?
+Expected: MarketResearch | Predicted: TrendForecast
+--------------------------------------------------
+Query: What's the future growth potential for cryptocurrencies?
+Expected: TrendForecast | Predicted: OpportunityMapping
+--------------------------------------------------
+Query: What vulnerabilities exist in the manufacturing supply chain?
+Expected: RiskAssessment | Predicted: IndustryAnalysis
+--------------------------------------------------
+Query: Can you design a plan to cut operational costs?
+Expected: StrategicPlanning | Predicted: RiskAssessment
+--------------------------------------------------
+Query: What are the best tools for financial analysis?
+Expected: ResourceCompilation | Predicted: FinancialAnalysis
+--------------------------------------------------
+Query: Compile a list of recent AI research papers.
+Expected: ResourceCompilation | Predicted: ScientificStudy
+--------------------------------------------------
+Query: Can you gather cybersecurity training resources?
+Expected: ResourceCompilation | Predicted: HowToGuide
+--------------------------------------------------
+Query: What's happening with crypto regulations?
+Expected: NewsDigest | Predicted: IndustryAnalysis
+--------------------------------------------------
+Query: How can I create a personal financial plan?
+Expected: HowToGuide | Predicted: StrategicPlanning
+--------------------------------------------------
+Query: What are frequent issues with online trading platforms?
+Expected: FAQCollection | Predicted: RiskAssessment
+--------------------------------------------------
+Query: Give me a high-level overview of our strategic plans.
+Expected: ExecutiveBrief | Predicted: StrategicPlanning
+--------------------------------------------------
+
+Total misclassifications: 13/90 (14.4%)
