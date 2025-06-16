@@ -35,6 +35,19 @@ class VectorstoreCompressor:
     async def async_get_context(self, query, max_results=5):
         """Get relevant context from vector store"""
         results = await self.vector_store.asimilarity_search(query=query, k=max_results, filter=self.filter)
+        
+        # # written by yashwanth, not part of the og
+        # print("-"*50)
+        # doc_dict = results[0].dict()
+        # for key, value in doc_dict.items():
+        #     if isinstance(value, str):
+        #         preview = value[:100] + "..." if len(value) > 100 else value
+        #         print(f"{key}: {preview}")
+        #     else:
+        #         print(f"{key}: {value}")
+        # print("-"*50)
+        # #
+        
         return self.prompt_family.pretty_print_docs(results)
 
 

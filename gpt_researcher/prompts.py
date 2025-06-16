@@ -186,7 +186,9 @@ Every url should be hyperlinked: [url website](url)
 Additionally, you MUST include hyperlinks to the relevant URLs wherever they are referenced in the report:
 
 eg: Author, A. A. (Year, Month Date). Title of web page. Website Name. [url website](url)
-"""
+"""     
+        elif report_source == ReportSource.LangChainVectorStore.value:
+            reference_prompt = "Do not include any references, hyperlinks, or a references section under any circumstances. The output should be entirely self-contained with no external citations or links."
         else:
             reference_prompt = f"""
 You MUST write all used source document names at the end of the report as references, and make sure to not add duplicated sources, but only one reference for each."
@@ -194,7 +196,7 @@ You MUST write all used source document names at the end of the report as refere
 
         tone_prompt = f"Write the report in a {tone.value} tone." if tone else ""
 
-        return f"""
+        default_prompt =  f"""
 Information: "{context}"
 ---
 Using the above information, answer the following query or task: "{question}" in a detailed report --
@@ -218,6 +220,30 @@ You MUST write the report in the following language: {language}.
 Please do your best, this is very important to my career.
 Assume that the current date is {date.today()}.
 """
+
+        langchain_vectorstore_prompt = f"""Information: "{context}"
+---
+Using the above information, answer the following query or task: "{question}" in a detailed report.
+
+The report should focus on the answer to the query, should be well structured, informative, in-depth, and comprehensive, with facts and numbers if available, and at least {total_words} words. You should strive to write the report as long as you can using all relevant and necessary information provided.
+
+Please follow all of the following guidelines in your report:
+- You MUST determine your own concrete and valid opinion based on the given information. Do NOT defer to general or meaningless conclusions.
+- You MUST write the report with markdown syntax and in the {report_format} format.
+- Use markdown tables when presenting structured data or comparisons to enhance readability.
+- Do NOT include any references, citations, hyperlinks, or URLs of any kind — neither in-text nor in a separate references section. The output must be completely self-contained and not mention any sources explicitly or implicitly.
+- You MUST NOT include a table of contents. Start from the main report body directly.
+
+You MUST write the report in the following language: {language}.
+
+Please do your best — this is very important to my career.  
+Assume that the current date is {date.today()}.
+"""
+
+        if report_source == ReportSource.LangChainVectorStore.value:
+            return langchain_vectorstore_prompt
+        else:
+            return default_prompt
 
     @staticmethod
     def curate_sources(query, sources, max_results=10):
@@ -440,6 +466,10 @@ response:
                           f"Content: {d.page_content}\n"
                           for i, d in enumerate(docs)
                           if top_n is None or i < top_n)
+        #written by yashwanth
+        # return f"\n".join(f"Content: {d.page_content}\n"
+        #                   for i, d in enumerate(docs)
+        #                   if top_n is None or i < top_n)
 
     @staticmethod
     def join_local_web_documents(docs_context: str, web_context: str) -> str:

@@ -142,7 +142,7 @@ async def get_report(query: str, in_json: dict):
         report_source = ReportSource.Web
     
     researcher = get_researcher(query, report_source, provider)
-        
+    researcher.set_verbose(True)
     await researcher.conduct_research()
     report = await researcher.write_report()
 
@@ -152,7 +152,7 @@ if __name__ == "__main__":
     query = "What company is the document about?"
     raw_json = """
 {
-  "model_provider": "openai",
+  "model_provider": "gemini",
   "report_source": "internal"
 }
 """
