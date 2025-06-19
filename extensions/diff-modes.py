@@ -1,4 +1,6 @@
 from gpt_researcher import GPTResearcher
+import gpt_researcher
+print(gpt_researcher.__file__)
 from langchain_qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
 from langchain_aws import BedrockEmbeddings
@@ -34,7 +36,7 @@ class Provider(Enum):
 class ReportSource(Enum):
     Web = "web"
     Internal = "langchain_vectorstore"
-    Hybrid = "hybrid"
+    Hybrid = "dual"
 
 def get_researcher(
         query: str,

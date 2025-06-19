@@ -145,6 +145,12 @@ class ResearchConductor:
             docs_context = await self._get_context_by_web_search(self.researcher.query, document_data, self.researcher.query_domains)
             web_context = await self._get_context_by_web_search(self.researcher.query, [], self.researcher.query_domains)
             research_data = self.researcher.prompt_family.join_local_web_documents(docs_context, web_context)
+
+        elif self.researcher.report_source == ReportSource.DualSearch.value:
+            web_context = await self._get_context_by_web_search(self.researcher.query, [], self.researcher.query_domains)
+            store_context = await self._get_context_by_vectorstore(self.researcher.query, self.researcher.vector_store_filter)
+            research_data = self.researcher.prompt_family.join_local_web_documents(store_context, web_context)
+            
         elif self.researcher.report_source == ReportSource.Azure.value:
             from ..document.azure_document_loader import AzureDocumentLoader
             azure_loader = AzureDocumentLoader(
