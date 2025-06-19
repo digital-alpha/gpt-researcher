@@ -1,0 +1,978 @@
+{
+  "evaluation_metadata": {
+    "timestamp": "2025-06-17T14:14:52.880056",
+    "total_queries": 90,
+    "output_directory": "./extensions/"
+  },
+  "metrics": {
+    "accuracy": 0.8444444444444444,
+    "total_queries": 90,
+    "correct_predictions": 76,
+    "precision": {
+      "CompanyProfile": 0.8333333333333334,
+      "ComparativeStudy": 1.0,
+      "DetailedInvestigation": 1.0,
+      "ExecutiveBrief": 0,
+      "FAQCollection": 1.0,
+      "FinancialAnalysis": 0.5555555555555556,
+      "HowToGuide": 0.6666666666666666,
+      "IndustryAnalysis": 0.8333333333333334,
+      "MarketResearch": 0.7142857142857143,
+      "NewsDigest": 0.8333333333333334,
+      "OpportunityMapping": 1.0,
+      "PerformanceMetrics": 1.0,
+      "ResourceCompilation": 1.0,
+      "RiskAssessment": 1.0,
+      "ScientificStudy": 1.0,
+      "StrategicPlanning": 0.6666666666666666,
+      "TechnicalAnalysis": 0.7142857142857143,
+      "TrendForecast": 1.0
+    },
+    "recall": {
+      "CompanyProfile": 1.0,
+      "ComparativeStudy": 1.0,
+      "DetailedInvestigation": 0.8,
+      "ExecutiveBrief": 0.0,
+      "FAQCollection": 0.8,
+      "FinancialAnalysis": 1.0,
+      "HowToGuide": 0.4,
+      "IndustryAnalysis": 1.0,
+      "MarketResearch": 1.0,
+      "NewsDigest": 1.0,
+      "OpportunityMapping": 1.0,
+      "PerformanceMetrics": 0.8,
+      "ResourceCompilation": 0.8,
+      "RiskAssessment": 1.0,
+      "ScientificStudy": 1.0,
+      "StrategicPlanning": 0.8,
+      "TechnicalAnalysis": 1.0,
+      "TrendForecast": 0.8
+    },
+    "macro_precision": 0.8231922398589065,
+    "macro_recall": 0.8444444444444446,
+    "confusion_matrix": {
+      "CompanyProfile": {
+        "CompanyProfile": 5,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "ComparativeStudy": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 5,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "DetailedInvestigation": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 4,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 1,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "ExecutiveBrief": {
+        "CompanyProfile": 1,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 1,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 1,
+        "MarketResearch": 1,
+        "NewsDigest": 1,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "FAQCollection": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 4,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 1,
+        "TrendForecast": 0
+      },
+      "FinancialAnalysis": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 5,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "HowToGuide": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 2,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 2,
+        "TechnicalAnalysis": 1,
+        "TrendForecast": 0
+      },
+      "IndustryAnalysis": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 5,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "MarketResearch": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 5,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "NewsDigest": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 5,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "OpportunityMapping": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 5,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "PerformanceMetrics": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 1,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 4,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "ResourceCompilation": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 1,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 4,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "RiskAssessment": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 5,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "ScientificStudy": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 5,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "StrategicPlanning": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 1,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 4,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 0
+      },
+      "TechnicalAnalysis": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 0,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 5,
+        "TrendForecast": 0
+      },
+      "TrendForecast": {
+        "CompanyProfile": 0,
+        "ComparativeStudy": 0,
+        "DetailedInvestigation": 0,
+        "ExecutiveBrief": 0,
+        "FAQCollection": 0,
+        "FinancialAnalysis": 1,
+        "HowToGuide": 0,
+        "IndustryAnalysis": 0,
+        "MarketResearch": 0,
+        "NewsDigest": 0,
+        "OpportunityMapping": 0,
+        "PerformanceMetrics": 0,
+        "ResourceCompilation": 0,
+        "RiskAssessment": 0,
+        "ScientificStudy": 0,
+        "StrategicPlanning": 0,
+        "TechnicalAnalysis": 0,
+        "TrendForecast": 4
+      }
+    },
+    "class_counts": {
+      "CompanyProfile": 5,
+      "ComparativeStudy": 5,
+      "DetailedInvestigation": 5,
+      "ExecutiveBrief": 5,
+      "FAQCollection": 5,
+      "FinancialAnalysis": 5,
+      "HowToGuide": 5,
+      "IndustryAnalysis": 5,
+      "MarketResearch": 5,
+      "NewsDigest": 5,
+      "OpportunityMapping": 5,
+      "PerformanceMetrics": 5,
+      "ResourceCompilation": 5,
+      "RiskAssessment": 5,
+      "ScientificStudy": 5,
+      "StrategicPlanning": 5,
+      "TechnicalAnalysis": 5,
+      "TrendForecast": 5
+    }
+  },
+  "detailed_results": [
+    {
+      "query": "Can you break down Apple's latest earnings report and revenue trends?",
+      "expected": "FinancialAnalysis",
+      "predicted": "FinancialAnalysis",
+      "correct": true
+    },
+    {
+      "query": "What's the current PE ratio and dividend yield for Tesla stock?",
+      "expected": "FinancialAnalysis",
+      "predicted": "FinancialAnalysis",
+      "correct": true
+    },
+    {
+      "query": "How does Amazon's cash flow and balance sheet look this year?",
+      "expected": "FinancialAnalysis",
+      "predicted": "FinancialAnalysis",
+      "correct": true
+    },
+    {
+      "query": "I need an analysis of Microsoft's profit margins and ROI.",
+      "expected": "FinancialAnalysis",
+      "predicted": "FinancialAnalysis",
+      "correct": true
+    },
+    {
+      "query": "Tell me about Google's financial ratios and how their assets are valued.",
+      "expected": "FinancialAnalysis",
+      "predicted": "FinancialAnalysis",
+      "correct": true
+    },
+    {
+      "query": "What are the RSI and MACD trends for Bitcoin right now?",
+      "expected": "TechnicalAnalysis",
+      "predicted": "TechnicalAnalysis",
+      "correct": true
+    },
+    {
+      "query": "Can you check the support and resistance levels for the S&P 500 ETF?",
+      "expected": "TechnicalAnalysis",
+      "predicted": "TechnicalAnalysis",
+      "correct": true
+    },
+    {
+      "query": "Are there any breakout patterns in NVIDIA's stock chart?",
+      "expected": "TechnicalAnalysis",
+      "predicted": "TechnicalAnalysis",
+      "correct": true
+    },
+    {
+      "query": "Show me the moving averages and Bollinger Bands for crude oil prices.",
+      "expected": "TechnicalAnalysis",
+      "predicted": "TechnicalAnalysis",
+      "correct": true
+    },
+    {
+      "query": "I'm curious about candlestick patterns for gold futures—any insights?",
+      "expected": "TechnicalAnalysis",
+      "predicted": "TechnicalAnalysis",
+      "correct": true
+    },
+    {
+      "query": "What's the size and growth potential of the electric vehicle market?",
+      "expected": "MarketResearch",
+      "predicted": "MarketResearch",
+      "correct": true
+    },
+    {
+      "query": "Who are the main consumers in the smartphone industry right now?",
+      "expected": "MarketResearch",
+      "predicted": "MarketResearch",
+      "correct": true
+    },
+    {
+      "query": "Can you analyze how people shop online for clothes?",
+      "expected": "MarketResearch",
+      "predicted": "MarketResearch",
+      "correct": true
+    },
+    {
+      "query": "What's the demand outlook for solar energy in the next decade?",
+      "expected": "MarketResearch",
+      "predicted": "MarketResearch",
+      "correct": true
+    },
+    {
+      "query": "How do streaming services like Netflix position their brands?",
+      "expected": "MarketResearch",
+      "predicted": "MarketResearch",
+      "correct": true
+    },
+    {
+      "query": "Tell me about the leadership team and structure at Netflix.",
+      "expected": "CompanyProfile",
+      "predicted": "CompanyProfile",
+      "correct": true
+    },
+    {
+      "query": "What's the history of SpaceX and who runs it?",
+      "expected": "CompanyProfile",
+      "predicted": "CompanyProfile",
+      "correct": true
+    },
+    {
+      "query": "Can you describe Meta's business model and org chart?",
+      "expected": "CompanyProfile",
+      "predicted": "CompanyProfile",
+      "correct": true
+    },
+    {
+      "query": "What's Uber's mission and how is their governance set up?",
+      "expected": "CompanyProfile",
+      "predicted": "CompanyProfile",
+      "correct": true
+    },
+    {
+      "query": "Who's on Disney's board and what's their company culture like?",
+      "expected": "CompanyProfile",
+      "predicted": "CompanyProfile",
+      "correct": true
+    },
+    {
+      "query": "What regulations shape the pharmaceutical industry today?",
+      "expected": "IndustryAnalysis",
+      "predicted": "IndustryAnalysis",
+      "correct": true
+    },
+    {
+      "query": "How is tech disrupting the financial services sector?",
+      "expected": "IndustryAnalysis",
+      "predicted": "IndustryAnalysis",
+      "correct": true
+    },
+    {
+      "query": "Can you explain the supply chain for computer chips?",
+      "expected": "IndustryAnalysis",
+      "predicted": "IndustryAnalysis",
+      "correct": true
+    },
+    {
+      "query": "What are the compliance rules for banks in the US?",
+      "expected": "IndustryAnalysis",
+      "predicted": "IndustryAnalysis",
+      "correct": true
+    },
+    {
+      "query": "How does the value chain work in the car manufacturing industry?",
+      "expected": "IndustryAnalysis",
+      "predicted": "IndustryAnalysis",
+      "correct": true
+    },
+    {
+      "query": "Compare the features of the iPhone 16 vs. Samsung Galaxy S25.",
+      "expected": "ComparativeStudy",
+      "predicted": "ComparativeStudy",
+      "correct": true
+    },
+    {
+      "query": "What are the pros and cons of Tesla vs. Toyota cars?",
+      "expected": "ComparativeStudy",
+      "predicted": "ComparativeStudy",
+      "correct": true
+    },
+    {
+      "query": "How does AWS stack up against Google Cloud in performance?",
+      "expected": "ComparativeStudy",
+      "predicted": "ComparativeStudy",
+      "correct": true
+    },
+    {
+      "query": "Can you compare Netflix and Hulu's competitive strengths?",
+      "expected": "ComparativeStudy",
+      "predicted": "ComparativeStudy",
+      "correct": true
+    },
+    {
+      "query": "Which is a better investment: Bitcoin or Ethereum?",
+      "expected": "ComparativeStudy",
+      "predicted": "ComparativeStudy",
+      "correct": true
+    },
+    {
+      "query": "What will cybersecurity look like in the next five years?",
+      "expected": "TrendForecast",
+      "predicted": "TrendForecast",
+      "correct": true
+    },
+    {
+      "query": "Can you predict how remote work will evolve by 2030?",
+      "expected": "TrendForecast",
+      "predicted": "TrendForecast",
+      "correct": true
+    },
+    {
+      "query": "What's the future growth potential for cryptocurrencies?",
+      "expected": "TrendForecast",
+      "predicted": "TrendForecast",
+      "correct": true
+    },
+    {
+      "query": "What trends are emerging in AI development?",
+      "expected": "TrendForecast",
+      "predicted": "TrendForecast",
+      "correct": true
+    },
+    {
+      "query": "How will retail sales shift during the holiday season?",
+      "expected": "TrendForecast",
+      "predicted": "FinancialAnalysis",
+      "correct": false
+    },
+    {
+      "query": "What are the biggest cybersecurity risks for banks?",
+      "expected": "RiskAssessment",
+      "predicted": "RiskAssessment",
+      "correct": true
+    },
+    {
+      "query": "Are there major risks to investing in Bitcoin right now?",
+      "expected": "RiskAssessment",
+      "predicted": "RiskAssessment",
+      "correct": true
+    },
+    {
+      "query": "What vulnerabilities exist in the manufacturing supply chain?",
+      "expected": "RiskAssessment",
+      "predicted": "RiskAssessment",
+      "correct": true
+    },
+    {
+      "query": "What operational risks come with space missions?",
+      "expected": "RiskAssessment",
+      "predicted": "RiskAssessment",
+      "correct": true
+    },
+    {
+      "query": "How risky is it to automate processes with AI?",
+      "expected": "RiskAssessment",
+      "predicted": "RiskAssessment",
+      "correct": true
+    },
+    {
+      "query": "Where are the best investment opportunities in renewable energy?",
+      "expected": "OpportunityMapping",
+      "predicted": "OpportunityMapping",
+      "correct": true
+    },
+    {
+      "query": "What markets should a tech company expand into?",
+      "expected": "OpportunityMapping",
+      "predicted": "OpportunityMapping",
+      "correct": true
+    },
+    {
+      "query": "Can you find partnership possibilities in medical AI?",
+      "expected": "OpportunityMapping",
+      "predicted": "OpportunityMapping",
+      "correct": true
+    },
+    {
+      "query": "Is there untapped potential in blockchain for finance?",
+      "expected": "OpportunityMapping",
+      "predicted": "OpportunityMapping",
+      "correct": true
+    },
+    {
+      "query": "What growth opportunities exist in virtual reality markets?",
+      "expected": "OpportunityMapping",
+      "predicted": "OpportunityMapping",
+      "correct": true
+    },
+    {
+      "query": "Can you build a dashboard to track my sales team's KPIs?",
+      "expected": "PerformanceMetrics",
+      "predicted": "PerformanceMetrics",
+      "correct": true
+    },
+    {
+      "query": "How can I measure my company's quarterly performance?",
+      "expected": "PerformanceMetrics",
+      "predicted": "FinancialAnalysis",
+      "correct": false
+    },
+    {
+      "query": "What metrics should I use to track team productivity?",
+      "expected": "PerformanceMetrics",
+      "predicted": "PerformanceMetrics",
+      "correct": true
+    },
+    {
+      "query": "Can you help monitor efficiency in our operations?",
+      "expected": "PerformanceMetrics",
+      "predicted": "PerformanceMetrics",
+      "correct": true
+    },
+    {
+      "query": "What are good success metrics for a digital ad campaign?",
+      "expected": "PerformanceMetrics",
+      "predicted": "PerformanceMetrics",
+      "correct": true
+    },
+    {
+      "query": "Help me create a roadmap for moving my business online.",
+      "expected": "StrategicPlanning",
+      "predicted": "StrategicPlanning",
+      "correct": true
+    },
+    {
+      "query": "What should my company's long-term goals be for growth?",
+      "expected": "StrategicPlanning",
+      "predicted": "StrategicPlanning",
+      "correct": true
+    },
+    {
+      "query": "Can you design a plan to cut operational costs?",
+      "expected": "StrategicPlanning",
+      "predicted": "HowToGuide",
+      "correct": false
+    },
+    {
+      "query": "What's a good strategic vision for my startup?",
+      "expected": "StrategicPlanning",
+      "predicted": "StrategicPlanning",
+      "correct": true
+    },
+    {
+      "query": "How should we plan milestones for a new product launch?",
+      "expected": "StrategicPlanning",
+      "predicted": "StrategicPlanning",
+      "correct": true
+    },
+    {
+      "query": "Can you list some great resources for learning Python?",
+      "expected": "ResourceCompilation",
+      "predicted": "ResourceCompilation",
+      "correct": true
+    },
+    {
+      "query": "What are the best tools for financial analysis?",
+      "expected": "ResourceCompilation",
+      "predicted": "FinancialAnalysis",
+      "correct": false
+    },
+    {
+      "query": "Compile a list of recent AI research papers.",
+      "expected": "ResourceCompilation",
+      "predicted": "ResourceCompilation",
+      "correct": true
+    },
+    {
+      "query": "What are some good references for ESG investing?",
+      "expected": "ResourceCompilation",
+      "predicted": "ResourceCompilation",
+      "correct": true
+    },
+    {
+      "query": "Can you gather cybersecurity training resources?",
+      "expected": "ResourceCompilation",
+      "predicted": "ResourceCompilation",
+      "correct": true
+    },
+    {
+      "query": "What's the latest news on Tesla's new projects?",
+      "expected": "NewsDigest",
+      "predicted": "NewsDigest",
+      "correct": true
+    },
+    {
+      "query": "Give me a roundup of recent AI breakthroughs.",
+      "expected": "NewsDigest",
+      "predicted": "NewsDigest",
+      "correct": true
+    },
+    {
+      "query": "What's happening with crypto regulations?",
+      "expected": "NewsDigest",
+      "predicted": "NewsDigest",
+      "correct": true
+    },
+    {
+      "query": "Can you summarize media coverage of the iPhone 16 launch?",
+      "expected": "NewsDigest",
+      "predicted": "NewsDigest",
+      "correct": true
+    },
+    {
+      "query": "What are the latest tech industry announcements?",
+      "expected": "NewsDigest",
+      "predicted": "NewsDigest",
+      "correct": true
+    },
+    {
+      "query": "How do I start investing in the stock market?",
+      "expected": "HowToGuide",
+      "predicted": "TechnicalAnalysis",
+      "correct": false
+    },
+    {
+      "query": "Can you give me a tutorial on building a machine learning model?",
+      "expected": "HowToGuide",
+      "predicted": "HowToGuide",
+      "correct": true
+    },
+    {
+      "query": "Walk me through trading crypto as a beginner.",
+      "expected": "HowToGuide",
+      "predicted": "HowToGuide",
+      "correct": true
+    },
+    {
+      "query": "How can I create a personal financial plan?",
+      "expected": "HowToGuide",
+      "predicted": "StrategicPlanning",
+      "correct": false
+    },
+    {
+      "query": "What are the steps to launch a startup?",
+      "expected": "HowToGuide",
+      "predicted": "StrategicPlanning",
+      "correct": false
+    },
+    {
+      "query": "What are common questions about investing in Bitcoin?",
+      "expected": "FAQCollection",
+      "predicted": "FAQCollection",
+      "correct": true
+    },
+    {
+      "query": "Can you answer typical questions about retirement savings?",
+      "expected": "FAQCollection",
+      "predicted": "FAQCollection",
+      "correct": true
+    },
+    {
+      "query": "What are frequent issues with online trading platforms?",
+      "expected": "FAQCollection",
+      "predicted": "TechnicalAnalysis",
+      "correct": false
+    },
+    {
+      "query": "What do people often ask about electric car benefits?",
+      "expected": "FAQCollection",
+      "predicted": "FAQCollection",
+      "correct": true
+    },
+    {
+      "query": "Can you provide answers about filing taxes?",
+      "expected": "FAQCollection",
+      "predicted": "FAQCollection",
+      "correct": true
+    },
+    {
+      "query": "Can you study the effectiveness of new cancer treatments?",
+      "expected": "ScientificStudy",
+      "predicted": "ScientificStudy",
+      "correct": true
+    },
+    {
+      "query": "What does statistical analysis say about vaccine trials?",
+      "expected": "ScientificStudy",
+      "predicted": "ScientificStudy",
+      "correct": true
+    },
+    {
+      "query": "I need a peer-reviewed study on social media's mental health effects.",
+      "expected": "ScientificStudy",
+      "predicted": "ScientificStudy",
+      "correct": true
+    },
+    {
+      "query": "Can you design an experiment to test solar panel efficiency?",
+      "expected": "ScientificStudy",
+      "predicted": "ScientificStudy",
+      "correct": true
+    },
+    {
+      "query": "What's the latest research on dark matter hypotheses?",
+      "expected": "ScientificStudy",
+      "predicted": "ScientificStudy",
+      "correct": true
+    },
+    {
+      "query": "Give me a quick summary of climate change effects.",
+      "expected": "ExecutiveBrief",
+      "predicted": "NewsDigest",
+      "correct": false
+    },
+    {
+      "query": "Can you provide a brief on our latest financial results?",
+      "expected": "ExecutiveBrief",
+      "predicted": "FinancialAnalysis",
+      "correct": false
+    },
+    {
+      "query": "What are the key points from our market research?",
+      "expected": "ExecutiveBrief",
+      "predicted": "MarketResearch",
+      "correct": false
+    },
+    {
+      "query": "Summarize the impact of the recent merger.",
+      "expected": "ExecutiveBrief",
+      "predicted": "IndustryAnalysis",
+      "correct": false
+    },
+    {
+      "query": "Give me a high-level overview of our strategic plans.",
+      "expected": "ExecutiveBrief",
+      "predicted": "CompanyProfile",
+      "correct": false
+    },
+    {
+      "query": "Can you do a deep dive into quantum computing uses?",
+      "expected": "DetailedInvestigation",
+      "predicted": "DetailedInvestigation",
+      "correct": true
+    },
+    {
+      "query": "What's an in-depth study on gene therapy advances?",
+      "expected": "DetailedInvestigation",
+      "predicted": "DetailedInvestigation",
+      "correct": true
+    },
+    {
+      "query": "I need a thorough analysis of climate change impacts.",
+      "expected": "DetailedInvestigation",
+      "predicted": "DetailedInvestigation",
+      "correct": true
+    },
+    {
+      "query": "Can you research blockchain scalability in detail?",
+      "expected": "DetailedInvestigation",
+      "predicted": "MarketResearch",
+      "correct": false
+    },
+    {
+      "query": "Give me a comprehensive review of self-driving car tech.",
+      "expected": "DetailedInvestigation",
+      "predicted": "DetailedInvestigation",
+      "correct": true
+    }
+  ]
+}

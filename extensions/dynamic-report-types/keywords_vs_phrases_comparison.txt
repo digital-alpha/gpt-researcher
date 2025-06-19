@@ -1,0 +1,282 @@
+=== KEYWORDS vs PHRASES CLASSIFICATION COMPARISON ===
+
+SUMMARY:
+----------------------------------------
+AVERAGE Method:
+  Keywords: 77/90 (85.6%)
+  Phrases:  80/90 (88.9%)
+
+MAX Method:
+  Keywords: 73/90 (81.1%)
+  Phrases:  77/90 (85.6%)
+
+WEIGHTED Method:
+  Keywords: 77/90 (85.6%)
+  Phrases:  80/90 (88.9%)
+
+
+DETAILED MISCLASSIFICATIONS:
+==================================================
+
+KEYWORDS MISCLASSIFICATIONS:
+------------------------------
+Query: What's the size and growth potential of the electric vehicle market?
+Expected: MarketResearch | Predicted: OpportunityMapping
+Top 3 Predictions:
+  1. OpportunityMapping: 0.2703
+  2. MarketResearch: 0.2388
+  3. TrendForecast: 0.2141
+Expected type score: 0.2388 (Rank: 2)
+Best match in predicted: 'growth opportunities'
+
+--------------------------------------------------------------------------------
+
+Query: Can you analyze how people shop online for clothes?
+Expected: MarketResearch | Predicted: TrendForecast
+Top 3 Predictions:
+  1. TrendForecast: 0.2503
+  2. MarketResearch: 0.2371
+  3. DetailedInvestigation: 0.2216
+Expected type score: 0.2371 (Rank: 2)
+Best match in predicted: 'trend analysis'
+
+--------------------------------------------------------------------------------
+
+Query: What's the demand outlook for solar energy in the next decade?
+Expected: MarketResearch | Predicted: TrendForecast
+Top 3 Predictions:
+  1. TrendForecast: 0.2264
+  2. MarketResearch: 0.2096
+  3. OpportunityMapping: 0.1610
+Expected type score: 0.2096 (Rank: 2)
+Best match in predicted: 'future predictions'
+
+--------------------------------------------------------------------------------
+
+Query: What's the future growth potential for cryptocurrencies?
+Expected: TrendForecast | Predicted: OpportunityMapping
+Top 3 Predictions:
+  1. OpportunityMapping: 0.3156
+  2. TrendForecast: 0.2913
+  3. RiskAssessment: 0.1690
+Expected type score: 0.2913 (Rank: 2)
+Best match in predicted: 'growth opportunities'
+
+--------------------------------------------------------------------------------
+
+Query: What vulnerabilities exist in the manufacturing supply chain?
+Expected: RiskAssessment | Predicted: IndustryAnalysis
+Top 3 Predictions:
+  1. IndustryAnalysis: 0.3496
+  2. RiskAssessment: 0.3381
+  3. OpportunityMapping: 0.1854
+Expected type score: 0.3381 (Rank: 2)
+Best match in predicted: 'supply chain dynamics'
+
+--------------------------------------------------------------------------------
+
+Query: Can you design a plan to cut operational costs?
+Expected: StrategicPlanning | Predicted: RiskAssessment
+Top 3 Predictions:
+  1. RiskAssessment: 0.2267
+  2. StrategicPlanning: 0.2149
+  3. ComparativeStudy: 0.1734
+Expected type score: 0.2149 (Rank: 2)
+Best match in predicted: 'operational risks'
+
+--------------------------------------------------------------------------------
+
+Query: What are the best tools for financial analysis?
+Expected: ResourceCompilation | Predicted: FinancialAnalysis
+Top 3 Predictions:
+  1. FinancialAnalysis: 0.2700
+  2. DetailedInvestigation: 0.2611
+  3. TrendForecast: 0.2456
+Expected type score: 0.1824 (Rank: N/A)
+Best match in predicted: 'financial ratios'
+
+--------------------------------------------------------------------------------
+
+Query: Compile a list of recent AI research papers.
+Expected: ResourceCompilation | Predicted: ScientificStudy
+Top 3 Predictions:
+  1. ScientificStudy: 0.2346
+  2. ResourceCompilation: 0.2144
+  3. DetailedInvestigation: 0.1698
+Expected type score: 0.2144 (Rank: 2)
+Best match in predicted: 'academic research'
+
+--------------------------------------------------------------------------------
+
+Query: Can you gather cybersecurity training resources?
+Expected: ResourceCompilation | Predicted: HowToGuide
+Top 3 Predictions:
+  1. HowToGuide: 0.3530
+  2. ResourceCompilation: 0.2418
+  3. RiskAssessment: 0.2057
+Expected type score: 0.2418 (Rank: 2)
+Best match in predicted: 'training materials'
+
+--------------------------------------------------------------------------------
+
+Query: What's happening with crypto regulations?
+Expected: NewsDigest | Predicted: IndustryAnalysis
+Top 3 Predictions:
+  1. IndustryAnalysis: 0.2413
+  2. NewsDigest: 0.1716
+  3. TrendForecast: 0.1608
+Expected type score: 0.1716 (Rank: 2)
+Best match in predicted: 'regulatory compliance'
+
+--------------------------------------------------------------------------------
+
+Query: How can I create a personal financial plan?
+Expected: HowToGuide | Predicted: StrategicPlanning
+Top 3 Predictions:
+  1. StrategicPlanning: 0.1538
+  2. FinancialAnalysis: 0.1337
+  3. RiskAssessment: 0.1171
+Expected type score: 0.1146 (Rank: N/A)
+Best match in predicted: 'action plan'
+
+--------------------------------------------------------------------------------
+
+Query: What are frequent issues with online trading platforms?
+Expected: FAQCollection | Predicted: RiskAssessment
+Top 3 Predictions:
+  1. RiskAssessment: 0.1920
+  2. IndustryAnalysis: 0.1804
+  3. TechnicalAnalysis: 0.1557
+Expected type score: 0.1470 (Rank: N/A)
+Best match in predicted: 'operational risks'
+
+--------------------------------------------------------------------------------
+
+Query: Give me a high-level overview of our strategic plans.
+Expected: ExecutiveBrief | Predicted: StrategicPlanning
+Top 3 Predictions:
+  1. StrategicPlanning: 0.4464
+  2. ExecutiveBrief: 0.4026
+  3. OpportunityMapping: 0.2614
+Expected type score: 0.4026 (Rank: 2)
+Best match in predicted: 'strategic roadmap'
+
+--------------------------------------------------------------------------------
+
+Total misclassifications for keywords: 13/90
+
+
+PHRASES MISCLASSIFICATIONS:
+------------------------------
+Query: What's the demand outlook for solar energy in the next decade?
+Expected: MarketResearch | Predicted: TrendForecast
+Top 3 Predictions:
+  1. TrendForecast: 0.2979
+  2. MarketResearch: 0.2758
+  3. IndustryAnalysis: 0.1745
+Expected type score: 0.2758 (Rank: 2)
+Best match in predicted: 'estimate future demand and market conditions'
+
+--------------------------------------------------------------------------------
+
+Query: How will retail sales shift during the holiday season?
+Expected: TrendForecast | Predicted: MarketResearch
+Top 3 Predictions:
+  1. MarketResearch: 0.2079
+  2. FinancialAnalysis: 0.1985
+  3. TrendForecast: 0.1967
+Expected type score: 0.1967 (Rank: 3)
+Best match in predicted: 'forecast demand trends and market opportunities'
+
+--------------------------------------------------------------------------------
+
+Query: Can you design a plan to cut operational costs?
+Expected: StrategicPlanning | Predicted: HowToGuide
+Top 3 Predictions:
+  1. HowToGuide: 0.2542
+  2. StrategicPlanning: 0.2429
+  3. RiskAssessment: 0.2388
+Expected type score: 0.2429 (Rank: 2)
+Best match in predicted: 'establish procedures and operational guidelines'
+
+--------------------------------------------------------------------------------
+
+Query: What are the best tools for financial analysis?
+Expected: ResourceCompilation | Predicted: FinancialAnalysis
+Top 3 Predictions:
+  1. FinancialAnalysis: 0.3152
+  2. PerformanceMetrics: 0.2511
+  3. TechnicalAnalysis: 0.2467
+Expected type score: 0.2249 (Rank: N/A)
+Best match in predicted: 'calculate financial ratios and investment returns'
+
+--------------------------------------------------------------------------------
+
+Query: How do I start investing in the stock market?
+Expected: HowToGuide | Predicted: TechnicalAnalysis
+Top 3 Predictions:
+  1. TechnicalAnalysis: 0.1183
+  2. FinancialAnalysis: 0.0987
+  3. OpportunityMapping: 0.0966
+Expected type score: 0.0388 (Rank: N/A)
+Best match in predicted: 'identify support and resistance levels in the market'
+
+--------------------------------------------------------------------------------
+
+Query: How can I create a personal financial plan?
+Expected: HowToGuide | Predicted: StrategicPlanning
+Top 3 Predictions:
+  1. StrategicPlanning: 0.1915
+  2. HowToGuide: 0.1385
+  3. FinancialAnalysis: 0.1384
+Expected type score: 0.1385 (Rank: 2)
+Best match in predicted: 'create action plans and milestone schedules'
+
+--------------------------------------------------------------------------------
+
+Query: What are the steps to launch a startup?
+Expected: HowToGuide | Predicted: StrategicPlanning
+Top 3 Predictions:
+  1. StrategicPlanning: 0.1676
+  2. HowToGuide: 0.1528
+  3. CompanyProfile: 0.1089
+Expected type score: 0.1528 (Rank: 2)
+Best match in predicted: 'develop a strategic roadmap and implementation plan'
+
+--------------------------------------------------------------------------------
+
+Query: What are frequent issues with online trading platforms?
+Expected: FAQCollection | Predicted: TechnicalAnalysis
+Top 3 Predictions:
+  1. TechnicalAnalysis: 0.2229
+  2. FAQCollection: 0.1682
+  3. RiskAssessment: 0.1479
+Expected type score: 0.1682 (Rank: 2)
+Best match in predicted: 'examine the candlestick formations and trading signals'
+
+--------------------------------------------------------------------------------
+
+Query: Can you provide a brief on our latest financial results?
+Expected: ExecutiveBrief | Predicted: FinancialAnalysis
+Top 3 Predictions:
+  1. FinancialAnalysis: 0.3390
+  2. ExecutiveBrief: 0.2752
+  3. NewsDigest: 0.2016
+Expected type score: 0.2752 (Rank: 2)
+Best match in predicted: 'break down the financial performance and profit margins'
+
+--------------------------------------------------------------------------------
+
+Query: What are the key points from our market research?
+Expected: ExecutiveBrief | Predicted: MarketResearch
+Top 3 Predictions:
+  1. MarketResearch: 0.4130
+  2. OpportunityMapping: 0.3100
+  3. IndustryAnalysis: 0.3097
+Expected type score: 0.2944 (Rank: N/A)
+Best match in predicted: 'research the target market size and growth potential'
+
+--------------------------------------------------------------------------------
+
+Total misclassifications for phrases: 10/90
+

@@ -60,14 +60,15 @@ def get_researcher(
     vector_store = None
     if report_source != ReportSource.Web:
         client = QdrantClient(
-            url="QDRANT_URL",
-            api_key="QDRANT_API_KEY",
+            url="https://ft-vdb.epiphaiplatform.com:443",
+            api_key="Y3NMMGK3Okzt7rzho88jhmzPZl5Mhhnd98i39bLG4OJPGRtNV7pH8sOlVNtveGce",
         )
 
         vector_store = QdrantVectorStore(
             client=client,
             collection_name="synchrony_collection",
             content_payload_key="content",
+            # metadata_payload_key="document_key",
             embedding=BedrockEmbeddings(region_name="us-east-1", model_id="amazon.titan-embed-text-v2:0"),
         )
 
@@ -149,11 +150,11 @@ async def get_report(query: str, in_json: dict):
     print(report)
 
 if __name__ == "__main__":
-    query = "What company is the document about?"
+    query = "how are the financials of the company which the file is attached of"
     raw_json = """
 {
-  "model_provider": "openai",
-  "report_source": "internal"
+  "model_provider": "gemini",
+  "report_source": "hybrid"
 }
 """
     in_json = json.loads(raw_json)

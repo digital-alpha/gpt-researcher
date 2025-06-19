@@ -1,0 +1,140 @@
+======================================================================
+REPORT TYPE CLASSIFICATION EVALUATION REPORT
+======================================================================
+Generated on: 2025-06-17 14:14:52
+Total test queries: 90
+
+OVERALL PERFORMANCE METRICS
+------------------------------
+Accuracy: 0.8444 (84.44%)
+Macro Precision: 0.8232 (82.32%)
+Macro Recall: 0.8444 (84.44%)
+Correct Predictions: 76/90
+
+CLASS DISTRIBUTION
+------------------
+CompanyProfile                :   5 samples (  5.6%)
+ComparativeStudy              :   5 samples (  5.6%)
+DetailedInvestigation         :   5 samples (  5.6%)
+ExecutiveBrief                :   5 samples (  5.6%)
+FAQCollection                 :   5 samples (  5.6%)
+FinancialAnalysis             :   5 samples (  5.6%)
+HowToGuide                    :   5 samples (  5.6%)
+IndustryAnalysis              :   5 samples (  5.6%)
+MarketResearch                :   5 samples (  5.6%)
+NewsDigest                    :   5 samples (  5.6%)
+OpportunityMapping            :   5 samples (  5.6%)
+PerformanceMetrics            :   5 samples (  5.6%)
+ResourceCompilation           :   5 samples (  5.6%)
+RiskAssessment                :   5 samples (  5.6%)
+ScientificStudy               :   5 samples (  5.6%)
+StrategicPlanning             :   5 samples (  5.6%)
+TechnicalAnalysis             :   5 samples (  5.6%)
+TrendForecast                 :   5 samples (  5.6%)
+
+PER-CLASS PERFORMANCE METRICS
+--------------------------------
+Class                          Precision    Recall       F1-Score    
+--------------------------------------------------------------------
+CompanyProfile                 0.8333       1.0000       0.9091      
+ComparativeStudy               1.0000       1.0000       1.0000      
+DetailedInvestigation          1.0000       0.8000       0.8889      
+ExecutiveBrief                 0.0000       0.0000       0.0000      
+FAQCollection                  1.0000       0.8000       0.8889      
+FinancialAnalysis              0.5556       1.0000       0.7143      
+HowToGuide                     0.6667       0.4000       0.5000      
+IndustryAnalysis               0.8333       1.0000       0.9091      
+MarketResearch                 0.7143       1.0000       0.8333      
+NewsDigest                     0.8333       1.0000       0.9091      
+OpportunityMapping             1.0000       1.0000       1.0000      
+PerformanceMetrics             1.0000       0.8000       0.8889      
+ResourceCompilation            1.0000       0.8000       0.8889      
+RiskAssessment                 1.0000       1.0000       1.0000      
+ScientificStudy                1.0000       1.0000       1.0000      
+StrategicPlanning              0.6667       0.8000       0.7273      
+TechnicalAnalysis              0.7143       1.0000       0.8333      
+TrendForecast                  1.0000       0.8000       0.8889      
+
+CONFUSION MATRIX
+----------------
+Rows: True Class, Columns: Predicted Class
+
+                    CompanyP  Comparat  Detailed  Executiv  FAQColle  Financia  HowToGui  Industry  MarketRe  NewsDige  Opportun  Performa  Resource  RiskAsse  Scientif  Strategi  Technica  TrendFor  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CompanyProfile      5         0         0         0         0         0         0         0         0         0         0         0         0         0         0         0         0         0         
+ComparativeStudy    0         5         0         0         0         0         0         0         0         0         0         0         0         0         0         0         0         0         
+DetailedInvestigat  0         0         4         0         0         0         0         0         1         0         0         0         0         0         0         0         0         0         
+ExecutiveBrief      1         0         0         0         0         1         0         1         1         1         0         0         0         0         0         0         0         0         
+FAQCollection       0         0         0         0         4         0         0         0         0         0         0         0         0         0         0         0         1         0         
+FinancialAnalysis   0         0         0         0         0         5         0         0         0         0         0         0         0         0         0         0         0         0         
+HowToGuide          0         0         0         0         0         0         2         0         0         0         0         0         0         0         0         2         1         0         
+IndustryAnalysis    0         0         0         0         0         0         0         5         0         0         0         0         0         0         0         0         0         0         
+MarketResearch      0         0         0         0         0         0         0         0         5         0         0         0         0         0         0         0         0         0         
+NewsDigest          0         0         0         0         0         0         0         0         0         5         0         0         0         0         0         0         0         0         
+OpportunityMapping  0         0         0         0         0         0         0         0         0         0         5         0         0         0         0         0         0         0         
+PerformanceMetrics  0         0         0         0         0         1         0         0         0         0         0         4         0         0         0         0         0         0         
+ResourceCompilatio  0         0         0         0         0         1         0         0         0         0         0         0         4         0         0         0         0         0         
+RiskAssessment      0         0         0         0         0         0         0         0         0         0         0         0         0         5         0         0         0         0         
+ScientificStudy     0         0         0         0         0         0         0         0         0         0         0         0         0         0         5         0         0         0         
+StrategicPlanning   0         0         0         0         0         0         1         0         0         0         0         0         0         0         0         4         0         0         
+TechnicalAnalysis   0         0         0         0         0         0         0         0         0         0         0         0         0         0         0         0         5         0         
+TrendForecast       0         0         0         0         0         1         0         0         0         0         0         0         0         0         0         0         0         4         
+
+MISCLASSIFICATIONS
+------------------
+1. Query: How will retail sales shift during the holiday season?
+   Expected: TrendForecast
+   Predicted: FinancialAnalysis
+
+2. Query: How can I measure my company's quarterly performance?
+   Expected: PerformanceMetrics
+   Predicted: FinancialAnalysis
+
+3. Query: Can you design a plan to cut operational costs?
+   Expected: StrategicPlanning
+   Predicted: HowToGuide
+
+4. Query: What are the best tools for financial analysis?
+   Expected: ResourceCompilation
+   Predicted: FinancialAnalysis
+
+5. Query: How do I start investing in the stock market?
+   Expected: HowToGuide
+   Predicted: TechnicalAnalysis
+
+6. Query: How can I create a personal financial plan?
+   Expected: HowToGuide
+   Predicted: StrategicPlanning
+
+7. Query: What are the steps to launch a startup?
+   Expected: HowToGuide
+   Predicted: StrategicPlanning
+
+8. Query: What are frequent issues with online trading platforms?
+   Expected: FAQCollection
+   Predicted: TechnicalAnalysis
+
+9. Query: Give me a quick summary of climate change effects.
+   Expected: ExecutiveBrief
+   Predicted: NewsDigest
+
+10. Query: Can you provide a brief on our latest financial results?
+   Expected: ExecutiveBrief
+   Predicted: FinancialAnalysis
+
+11. Query: What are the key points from our market research?
+   Expected: ExecutiveBrief
+   Predicted: MarketResearch
+
+12. Query: Summarize the impact of the recent merger.
+   Expected: ExecutiveBrief
+   Predicted: IndustryAnalysis
+
+13. Query: Give me a high-level overview of our strategic plans.
+   Expected: ExecutiveBrief
+   Predicted: CompanyProfile
+
+14. Query: Can you research blockchain scalability in detail?
+   Expected: DetailedInvestigation
+   Predicted: MarketResearch
+
