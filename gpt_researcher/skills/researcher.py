@@ -147,8 +147,10 @@ class ResearchConductor:
             research_data = self.researcher.prompt_family.join_local_web_documents(docs_context, web_context)
 
         elif self.researcher.report_source == ReportSource.DualSearch.value:
-            web_context = await self._get_context_by_web_search(self.researcher.query, [], self.researcher.query_domains)
-            store_context = await self._get_context_by_vectorstore(self.researcher.query, self.researcher.vector_store_filter)
+            web_context, store_context = await asyncio.gather(
+                self._get_context_by_web_search(self.researcher.query, [], self.researcher.query_domains),
+                self._get_context_by_vectorstore(self.researcher.query, self.researcher.vector_store_filter)
+            )
             research_data = self.researcher.prompt_family.join_local_web_documents(store_context, web_context)
             
         elif self.researcher.report_source == ReportSource.Azure.value:
