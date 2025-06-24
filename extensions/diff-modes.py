@@ -1,19 +1,20 @@
 from gpt_researcher import GPTResearcher
 import gpt_researcher
 print(gpt_researcher.__file__)
+
 from langchain_qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
 from langchain_aws import BedrockEmbeddings
-
-from qdrant_client.http.models import Distance, VectorParams
-from langchain.text_splitter import CharacterTextSplitter
-from langchain_core.documents import Document
 
 import asyncio
 from enum import Enum
 import json
 import tempfile
 import os
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 
 class Provider(Enum):
@@ -85,12 +86,30 @@ def get_researcher(
         config_path=temp_config_path,
         vector_store=vector_store,
         report_source=config_dict["REPORT_SOURCE"])
-    
+
     # print(json.dumps(researcher.cfg.__dict__, indent=2))
+    
+    log_researcher_config(researcher)
     
     os.remove(temp_config_path)
 
     return researcher
+
+def log_researcher_config(researcher):
+    try:
+        config_info = {
+            'report_source': researcher.report_source,
+            'report_type': researcher.report_type,
+            'embedding': researcher.cfg.embedding,
+            'fast llm': researcher.cfg.fast_llm_model,
+            'strategic llm': researcher.cfg.strategic_llm_model,
+            'smart llm': researcher.cfg.smart_llm_model,
+        }
+        
+        logger.info(f"GPTResearcher Configuration: {json.dumps(config_info, indent=2)}")
+        
+    except AttributeError as e:
+        logger.warning(f"Could not access some researcher attributes: {e}")
 
 async def get_report(query: str, in_json: dict):
     provider_name = in_json.get("model_provider", "openai").upper()
