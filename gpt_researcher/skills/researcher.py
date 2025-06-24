@@ -151,8 +151,88 @@ class ResearchConductor:
                 self._get_context_by_web_search(self.researcher.query, [], self.researcher.query_domains),
                 self._get_context_by_vectorstore(self.researcher.query, self.researcher.vector_store_filter)
             )
-            research_data = self.researcher.prompt_family.join_local_web_documents(store_context, web_context)
             
+            store_context_prompt = f"""
+   DUAL-SOURCE RESEARCH ANALYSIS FRAMEWORK
+
+   You are conducting research using two distinct information sources that must be strategically integrated. Follow these comprehensive guidelines to produce an accurate, well-sourced report.
+
+   PRIMARY SOURCE - DOCUMENT-BASED FINDINGS:
+   {store_context}
+
+   SECONDARY SOURCE - WEB SEARCH CONTEXT:
+   Available through web search results for supplementary information.
+
+   CRITICAL ANALYSIS INSTRUCTIONS:
+
+   1. SOURCE HIERARCHY AND AUTHORITY:
+      • Document-based findings (above) are your PRIMARY and AUTHORITATIVE source
+      • These documents contain specific, verified information that should be treated as ground truth
+      • Web search results serve as SECONDARY sources for context, validation, and supplementary information
+      • When conflicts arise between sources, document-based findings take precedence
+
+   2. INFORMATION EXTRACTION PROTOCOL:
+      • First, thoroughly analyze the document-based findings to identify:
+        - Key entities (companies, organizations, people, locations, products, etc.)
+        - Specific data points (numbers, dates, metrics, specifications, etc.)
+        - Core facts and findings relevant to the query
+        - Context and background information
+      • Extract and memorize these key identifiers before considering web search results
+      • Use these identifiers as filters and validation points for web search information
+
+   3. WEB SEARCH INTEGRATION STRATEGY:
+      • Use web search results to:
+        - Provide broader industry/market/field context
+        - Offer comparative analysis and benchmarking
+        - Supply recent developments or updates not covered in documents
+        - Add expert opinions or alternative perspectives
+        - Fill information gaps not addressed in primary documents
+      • DO NOT use web search to override or contradict document-based facts
+      • If web search suggests different entities or conflicting information, investigate carefully and note discrepancies
+
+   4. QUERY-SPECIFIC FOCUS MAINTENANCE:
+      • The user's query should be answered primarily using document-based information
+      • Ensure that any specific entities mentioned in documents (companies, products, locations, etc.) remain the central focus
+      • Web search should enhance understanding of these specific entities, not introduce unrelated ones
+      • Maintain consistency in terminology, names, and references throughout the report
+
+   5. COMPREHENSIVE REPORTING STRUCTURE:
+      • Begin with a clear executive summary based on document findings
+      • Present core findings from documents as the main content
+      • Integrate web search insights as contextual enhancements
+      • Provide comparative analysis where relevant
+      • Include recent developments or industry context from web sources
+      • Conclude with synthesis that prioritizes document-based conclusions
+
+   6. SOURCE ATTRIBUTION AND TRANSPARENCY:
+      • Clearly distinguish between information sources throughout your report
+      • Use phrases like "According to the provided documents..." for primary source information
+      • Use phrases like "Industry context suggests..." or "Recent developments indicate..." for web search information
+      • Note any discrepancies between sources and explain how you resolved them
+      • Maintain transparency about the limitations of each source type
+
+   7. QUALITY ASSURANCE CHECKS:
+      • Verify that key entities from documents are correctly represented
+      • Ensure numerical data and specific facts match document sources
+      • Confirm that web search information genuinely relates to the documented entities
+      • Check that your conclusions are properly supported by the primary sources
+      • Validate that the report directly addresses the user's original query
+
+   8. ADAPTIVE ANALYSIS APPROACH:
+      • For factual queries: Prioritize document precision with web context
+      • For analytical queries: Use documents as foundation, web for broader perspective
+      • For comparative queries: Use documents for specific case, web for comparison points
+      • For trend analysis: Use documents for baseline, web for current developments
+      • For technical queries: Use documents for specifications, web for applications/implications
+
+   FINAL DIRECTIVE:
+   Generate a comprehensive, well-structured report that demonstrates mastery of both information sources while maintaining the authority and accuracy of the document-based findings. Your report should be informative, balanced, and directly responsive to the user's query while showcasing the unique value that each information source provides.
+
+   Remember: The goal is not just to combine information, but to create a synergistic analysis where document-based authority is enhanced by web-based context to deliver superior insights.
+   """
+   
+            research_data = self.researcher.prompt_family.join_local_web_documents(store_context_prompt, web_context)
+ 
         elif self.researcher.report_source == ReportSource.Azure.value:
             from ..document.azure_document_loader import AzureDocumentLoader
             azure_loader = AzureDocumentLoader(

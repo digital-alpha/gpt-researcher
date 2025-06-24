@@ -61,9 +61,15 @@ def get_researcher(
 
     vector_store = None
     if report_source != ReportSource.Web:
-        client = QdrantClient(
+        og_client = QdrantClient(
             url="https://ft-vdb.epiphaiplatform.com:443",
             api_key="Y3NMMGK3Okzt7rzho88jhmzPZl5Mhhnd98i39bLG4OJPGRtNV7pH8sOlVNtveGce",
+        )
+        client = QdrantClient(location=":memory:")
+
+        og_client.migrate(
+            dest_client=client,
+            collection_names=["synchrony_collection"],
         )
 
         vector_store = QdrantVectorStore(
@@ -73,8 +79,6 @@ def get_researcher(
             # metadata_payload_key="document_key",
             embedding=BedrockEmbeddings(region_name="us-east-1", model_id="amazon.titan-embed-text-v2:0"),
         )
-
-        # vector_store = setup_store()
 
     researcher = GPTResearcher(
         query=query,
@@ -87,47 +91,6 @@ def get_researcher(
     os.remove(temp_config_path)
 
     return researcher
-
-# def setup_store(file_path: str = "./notebooks/DA/storage/docs/Nvidia-stock.md"):
-#     try:
-#         with open(file_path, 'r', encoding='utf-8') as file:
-#             essay = file.read()
-#         print(f"Successfully read essay from {file_path}")
-#     except FileNotFoundError:
-#         print(f"Essay file not found at {file_path}. Using a placeholder text.")
-#         essay = "This is a placeholder text because the essay file wasn't found."
-#     except Exception as e:
-#         print(f"Error reading essay file: {str(e)}. Using a placeholder text.")
-#         essay = "This is a placeholder text due to error reading the essay file."
-
-#     document = [Document(page_content=essay)]
-#     text_splitter = CharacterTextSplitter(chunk_size=300, chunk_overlap=30, separator="\n")
-#     docs = text_splitter.split_documents(documents=document)
-
-#     client = QdrantClient(location=":memory:")
-
-#     try:
-#         client.create_collection(
-#             collection_name="demo_collection",
-#             vectors_config=VectorParams(size=1024, distance=Distance.COSINE),
-#         )
-#         collection_created = True
-#     except ValueError:
-#         print("Using existing collection...")
-#         collection_created = False
-        
-#     vector_store = QdrantVectorStore(
-#         client=client,
-#         collection_name="demo_collection",
-#         embedding=BedrockEmbeddings(region_name="us-east-1", model_id="amazon.titan-embed-text-v2:0"),
-#     )
-
-#     if collection_created:
-#         vector_store.add_documents(documents=docs)
-#         print("Documents added to the collection.")
-    
-#     return vector_store
-
 
 async def get_report(query: str, in_json: dict):
     provider_name = in_json.get("model_provider", "openai").upper()
@@ -152,7 +115,7 @@ async def get_report(query: str, in_json: dict):
     print(report)
 
 if __name__ == "__main__":
-    query = "how are the financials of the company which the file is attached of"
+    query = "how are the financials of the company which the file is attached of. also put the name of the company wherever necessary in the final report."
     raw_json = """
 {
   "model_provider": "gemini",
