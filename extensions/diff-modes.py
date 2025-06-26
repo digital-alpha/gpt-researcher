@@ -85,7 +85,8 @@ def get_researcher(
         query=query,
         config_path=temp_config_path,
         vector_store=vector_store,
-        report_source=config_dict["REPORT_SOURCE"])
+        report_source=config_dict["REPORT_SOURCE"],
+        verbose=True)
 
     # print(json.dumps(researcher.cfg.__dict__, indent=2))
     
@@ -132,9 +133,13 @@ async def get_report(query: str, in_json: dict):
     report = await researcher.write_report()
 
     print(report)
+    filename = f"./extensions/research_report.txt"
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(report)
+    print(f"Report saved to {filename}")
 
 if __name__ == "__main__":
-    query = "how are the financials of the company which the file is attached of. also put the name of the company wherever necessary in the final report."
+    query = "how are the financials of the company which the file is attached of compared to in 2018. also put the name of the company wherever necessary in the final report."
     raw_json = """
 {
   "model_provider": "gemini",
