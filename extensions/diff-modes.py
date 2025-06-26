@@ -128,7 +128,7 @@ async def get_report(query: str, in_json: dict):
         report_source = ReportSource.Web
     
     researcher = get_researcher(query, report_source, provider)
-        
+    researcher.set_verbose(True)
     await researcher.conduct_research()
     report = await researcher.write_report()
 
