@@ -86,7 +86,9 @@ def get_researcher(
         config_path=temp_config_path,
         vector_store=vector_store,
         report_source=config_dict["REPORT_SOURCE"],
-        verbose=True)
+        verbose=True,)
+    
+    researcher.retrievers[0].topic = "news" #default "general"
 
     # print(json.dumps(researcher.cfg.__dict__, indent=2))
     
@@ -140,6 +142,7 @@ async def get_report(query: str, in_json: dict):
 
 if __name__ == "__main__":
     query = "how are the financials of the company which the file is attached of compared to in 2018. also put the name of the company wherever necessary in the final report."
+    # query = "how are the financials of jetblue? compare the latest one with one from 2018."
     raw_json = """
 {
   "model_provider": "gemini",
