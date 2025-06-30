@@ -32,7 +32,7 @@ class ResearchConductor:
         await stream_output(
             "logs",
             "planning_research",
-            f"🌐 Browsing the web to learn more about the task: {query}...",
+            f"🌐 Browsing the web to learn more about the task: {query[:200]}...",
             self.researcher.websocket,
         )
 
@@ -82,7 +82,7 @@ class ResearchConductor:
             await stream_output(
                 "logs",
                 "starting_research",
-                f"🔍 Starting the research task for '{self.researcher.query}'...",
+                f"🔍 Starting the research task for '{self.researcher.query[:200]}'...",
                 self.researcher.websocket,
             )
             await stream_output(
@@ -657,7 +657,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                 await stream_output(
                     "logs",
                     "mcp_retrieval_stage1",
-                    f"🧠 Stage 1: Selecting optimal MCP tools for: {query}",
+                    f"🧠 Stage 1: Selecting optimal MCP tools for: {query[:200]}",
                     self.researcher.websocket,
                 )
             
@@ -685,7 +685,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                     await stream_output(
                         "logs",
                         "mcp_no_results",
-                        f"ℹ️ No relevant information found via MCP for: {query}",
+                        f"ℹ️ No relevant information found via MCP for: {query[:200]}",
                         self.researcher.websocket,
                     )
                 return []
@@ -894,7 +894,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                 await stream_output(
                     "logs",
                     "mcp_retrieval",
-                    f"🔌 Consulting MCP server(s) for information on: {query}",
+                    f"🔌 Consulting MCP server(s) for information on: {query[:200]}",
                     self.researcher.websocket,
                 )
             
@@ -934,7 +934,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                         await stream_output(
                             "logs",
                             "mcp_no_results",
-                            f"ℹ️ No relevant information found from MCP server for: {query}",
+                            f"ℹ️ No relevant information found from MCP server for: {query[:200]}",
                             self.researcher.websocket,
                         )
                 
