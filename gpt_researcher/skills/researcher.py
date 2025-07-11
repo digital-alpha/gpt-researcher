@@ -294,11 +294,14 @@ NEVER substitute or generalize entities from the web. Always validate them throu
         if self.researcher.report_type != "subtopic_report":
             sub_queries.append(query)
 
+        log_sub_queries = []
+        for q in sub_queries:
+            log_sub_queries.append(f"{q[:200]}...")
         if self.researcher.verbose:
             await stream_output(
                 "logs",
                 "subqueries",
-                f"🗂️  I will conduct my research based on the following queries: {sub_queries}...",
+                f"🗂️  I will conduct my research based on the following queries: {log_sub_queries}...",
                 self.researcher.websocket,
                 True,
                 sub_queries,
@@ -384,11 +387,14 @@ NEVER substitute or generalize entities from the web. Always validate them throu
         if self.researcher.report_type != "subtopic_report":
             sub_queries.append(query)
 
+        log_sub_queries = []
+        for q in sub_queries:
+            log_sub_queries.append(f"{q[:200]}...")
         if self.researcher.verbose:
             await stream_output(
                 "logs",
                 "subqueries",
-                f"🗂️ I will conduct my research based on the following queries: {sub_queries}...",
+                f"🗂️ I will conduct my research based on the following queries: {log_sub_queries}...",
                 self.researcher.websocket,
                 True,
                 sub_queries,
@@ -508,7 +514,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
             await stream_output(
                 "logs",
                 "running_subquery_research",
-                f"\n🔍 Running research for '{sub_query}'...",
+                f"\n🔍 Running research for '{sub_query[:200]}'...",
                 self.researcher.websocket,
             )
 
@@ -537,7 +543,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                         await stream_output(
                             "logs",
                             "mcp_cache_reuse",
-                            f"♻️ Reusing cached MCP results ({len(mcp_context)} sources) for: {sub_query}",
+                            f"♻️ Reusing cached MCP results ({len(mcp_context)} sources) for: {sub_query[:200]}...",
                             self.researcher.websocket,
                         )
                     
@@ -549,7 +555,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                         await stream_output(
                             "logs",
                             "mcp_comprehensive_run",
-                            f"🔍 Running deep MCP research for: {sub_query}",
+                            f"🔍 Running deep MCP research for: {sub_query[:200]}...",
                             self.researcher.websocket,
                         )
                     
@@ -561,7 +567,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                         await stream_output(
                             "logs",
                             "mcp_fallback",
-                            f"🔌 MCP cache unavailable, running MCP research for: {sub_query}",
+                            f"🔌 MCP cache unavailable, running MCP research for: {sub_query[:200]}...",
                             self.researcher.websocket,
                         )
                     
@@ -602,7 +608,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                     await stream_output(
                         "logs",
                         "subquery_context_not_found",
-                        f"🤷 No content found for '{sub_query}'...",
+                        f"🤷 No content found for '{sub_query[:200]}'...",
                         self.researcher.websocket,
                     )
             
@@ -622,7 +628,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                 await stream_output(
                     "logs",
                     "subquery_error",
-                    f"❌ Error processing '{sub_query}': {str(e)}",
+                    f"❌ Error processing '{sub_query[:200]}...': {str(e)}",
                     self.researcher.websocket,
                 )
             return ""
@@ -657,7 +663,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                 await stream_output(
                     "logs",
                     "mcp_retrieval_stage1",
-                    f"🧠 Stage 1: Selecting optimal MCP tools for: {query[:200]}",
+                    f"🧠 Stage 1: Selecting optimal MCP tools for: {query[:200]}...",
                     self.researcher.websocket,
                 )
             
@@ -685,7 +691,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                     await stream_output(
                         "logs",
                         "mcp_no_results",
-                        f"ℹ️ No relevant information found via MCP for: {query[:200]}",
+                        f"ℹ️ No relevant information found via MCP for: {query[:200]}...",
                         self.researcher.websocket,
                     )
                 return []
@@ -767,7 +773,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
             await stream_output(
                 "logs",
                 "running_subquery_with_vectorstore_research",
-                f"\n🔍 Running research for '{sub_query}'...",
+                f"\n🔍 Running research for '{sub_query[:200]}'...",
                 self.researcher.websocket,
             )
 
@@ -894,7 +900,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                 await stream_output(
                     "logs",
                     "mcp_retrieval",
-                    f"🔌 Consulting MCP server(s) for information on: {query[:200]}",
+                    f"🔌 Consulting MCP server(s) for information on: {query[:200]}...",
                     self.researcher.websocket,
                 )
             
@@ -934,7 +940,7 @@ NEVER substitute or generalize entities from the web. Always validate them throu
                         await stream_output(
                             "logs",
                             "mcp_no_results",
-                            f"ℹ️ No relevant information found from MCP server for: {query[:200]}",
+                            f"ℹ️ No relevant information found from MCP server for: {query[:200]}...",
                             self.researcher.websocket,
                         )
                 
