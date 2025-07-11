@@ -21,9 +21,9 @@ logger.propagate = False
 class Provider(Enum):
     OPENAI = {
         "FAST_LLM": "openai:gpt-4.1-mini-2025-04-14",
-        "SMART_LLM": "openai:gpt-4.1-mini-2025-04-14",
-        "STRATEGIC_LLM": "openai:gpt-4.1-mini-2025-04-14",
-        "llm_kwargs": {"api_key": "openai-api-key"}
+        "SMART_LLM": "openai:gpt-4.1-2025-04-14",
+        "STRATEGIC_LLM": "openai:o4-mini-2025-04-16",
+        "llm_kwargs": {"api_key": "<openai-api-key>"}
     }
     ANTHROPIC = {
         "FAST_LLM": "anthropic:claude-3-5-sonnet-latest",
@@ -34,7 +34,7 @@ class Provider(Enum):
         "FAST_LLM": "google_genai:gemini-2.0-flash-001",
         "SMART_LLM": "google_genai:gemini-2.0-flash-001",
         "STRATEGIC_LLM": "google_genai:gemini-2.0-flash-001",
-        "llm_kwargs": {"api_key": "<google-api-key>"}
+        "llm_kwargs": {"google_api_key": "<google-api-key>"}
     }
 
 class ReportSource(Enum):
@@ -173,7 +173,7 @@ Comment on whether analyst follow-up mitigated any negative drift."""
     
     raw_json = """
 {
-  "model_provider": "gemini",
+  "model_provider": "openai",
   "report_source": "web"
 }
 """
